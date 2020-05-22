@@ -1,1 +1,14 @@
-﻿
+﻿<div class="card-columns" ng-controller="FruitController">
+    <div class="card" ng-repeat="x in Fruit">
+        <img class="card-img-top" ng-src="{{x.photoUrl}}">
+        <div class="card-body">
+            <h5 class="card-title">{{x.name}}</h5>
+            <p class="card-text">{{x.description | limitTo:90}}{{x.description.length > 90 ? '...' : ''}}</p>
+
+        </div>
+        <div class="card-footer" style="text-align:center">
+            <a href="#!FruitDetails/{{x.id}}" id="myBtn" >More</a>
+        </div>
+    </div>
+
+</div>

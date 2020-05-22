@@ -94,6 +94,8 @@
   <ItemGroup>
     <Content Include="App\App.js" />
     <Content Include="App\Controllers\FruitController.js" />
+    <Content Include="App\Controllers\FruitDetailsController.js" />
+    <Content Include="App\Views\FruitDetails.html" />
     <Content Include="App\Views\FruitList.html" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular-mocks.js" />
