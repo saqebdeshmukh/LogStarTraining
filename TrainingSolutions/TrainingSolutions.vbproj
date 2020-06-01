@@ -95,6 +95,7 @@
     <Content Include="App\App.js" />
     <Content Include="App\Controllers\FruitController.js" />
     <Content Include="App\Controllers\FruitDetailsController.js" />
+    <Content Include="App\Services\Header.js" />
     <Content Include="App\Views\FruitDetails.html" />
     <Content Include="App\Views\FruitList.html" />
     <Content Include="index.html" />
@@ -154,9 +155,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App\Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

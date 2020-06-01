@@ -5,34 +5,67 @@
 
                 <div class="preview-pic tab-content">
                     <div class="tab-pane active" id="pic-1"><img ng-src="{{photoUrl}}" style="width:400px" /></div>
-                    
+
                 </div>
-              
+
             </div>
             <div class="details col-md-6">
                 <h3 class="product-title">{{name}}</h3>
-               
+
                 <p class="product-description">{{description}}</p>
                 <h4 class="price">price: <span>{{PriceD | currency :"₹"}}</span></h4>
-               
+
                 <h5 class="sizes">
                     Quantity:
-                   
-                    <select
-                            ng-options="x.Qty for x in priceDetails track by x.Qty"
+
+                    <select ng-options="x.Qty for x in priceDetails track by x.Qty"
                             ng-model="Priceobj" ng-change="ChangeQty()"></select>
-                   
+
                 </h5>
-              
+
                 <div class="action">
                     <button class="add-to-cart btn btn-default" ng-click="AddCart()" type="button">add to cart</button>
-                  
+                    <button class="btn btn-success pull-left" ng-click="OpenCart()" type="button">your cart</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="card-title">Your Cart have {{count}} Items</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="modal-body" >
+                    <table class="table table-striped" ng-show="count > 0">
+                        <!--<thead>
+                            <tr>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>-->
+                        <tbody>
+                            <tr ng-repeat="x in CartData">
+                                <td><img src="{{x.photoUrl}}" style="width:40px" class="rounded"/></td>
+                                <td>{{x.name}} {{x.priceDetails.Qty}}  {{x.priceDetails.Price | currency :"₹"}}</td>
+                                <td> <button type="button" ng-click="RemoveCart($index)" class="close btn btn-danger">&times;</button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <h6 ng-show="count <= 0"> Sorry You don't have anything your cart</h6>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
 
 
 
